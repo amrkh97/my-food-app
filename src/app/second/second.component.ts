@@ -7,6 +7,8 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class SecondComponent implements OnInit {
   disableVar: boolean = false;
+  showText:boolean = false;
+  
   constructor() {
     setTimeout(() => {
       this.disableVar = true;
@@ -14,6 +16,11 @@ export class SecondComponent implements OnInit {
    }
 
   ngOnInit(): void {
+  }
+
+  makeLabelAppear(event: Event){
+    this.showText = true;
+    console.log(event);
   }
 
 }
