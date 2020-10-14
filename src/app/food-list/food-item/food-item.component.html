@@ -1,20 +1,18 @@
-<div class="container">
-    <div class="card" style="min-width: fit-content;">
-        <img class="card-img-top img-responsive" [src]="foodItem.imgPath" alt='{{foodItem.description}}'>
-        <hr>
-        <div class="card-body ">
-            <div class="row">
-                <div class="col-8">
-                    <h5 class="card-title">{{ foodItem.name }}</h5>
-                    <p class="card-text">{{ foodItem.description }}</p>
-                </div>
-                <div class="col-4">
-                    <p style="text-align: end;">Price is: {{foodItem.price}} L.E</p>
-                </div>
+<div class="card" style="min-width: fit-content;">
+    <img class="card-img-top img-responsive" [src]="foodItem.imgPath" alt='{{foodItem.description}}'>
+    <hr>
+    <div class="card-body ">
+        <div class="row">
+            <div class="col-8">
+                <h5 class="card-title">{{ foodItem.name }}</h5>
+                <p class="card-text">{{ foodItem.description }}</p>
             </div>
-            <div class="row">
-                <button type="button" class="btn btn-primary btn-lg btn-block">Add To Cart</button>
+            <div class="col-4">
+                <p style="text-align: end;">Price is: {{foodItem.price}} L.E</p>
             </div>
+        </div>
+        <div class="row">
+            <button type="button" class="btn btn-primary btn-lg btn-block">Add To Cart</button>
         </div>
     </div>
 </div>
