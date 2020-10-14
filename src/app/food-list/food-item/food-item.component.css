@@ -1,0 +1,18 @@
+.container {
+    background-color: khaki;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.card-img-top {
+    width: auto;
+    min-width: 300px;
+    max-height: 300px;
+    padding-top: 1%;
+}
+
+.btn {
+    margin-top: 10px;
+}
