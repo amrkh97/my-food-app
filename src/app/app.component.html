@@ -1,15 +1,21 @@
-<app-navigation>
-</app-navigation>
+<div *ngIf='isLoggedIn'>
+    <app-navigation>
+    </app-navigation>
 
-<div class='container'>
-    <div class='row'>
-        <div class='col-xs-4'>
-            <br>
-            <app-food-list></app-food-list>
+    <div class='container'>
+        <div class='row'>
+            <div class='col-xs-4'>
+                <br>
+                <app-food-list></app-food-list>
+            </div>
         </div>
     </div>
+
+    <router-outlet>
+
+    </router-outlet>
+
 </div>
-
-<router-outlet>
-
-</router-outlet>
+<div *ngIf='!isLoggedIn'>
+    <p>Not logged in....</p>
+</div>

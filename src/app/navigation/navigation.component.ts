@@ -13,4 +13,13 @@ export class NavigationComponent implements OnInit {
 
   }
 
+  onCollapseInvert(){
+    console.log("Old Value:")
+    console.log(this.collapsed);
+    this.collapsed = !this.collapsed;
+    
+    console.log("New Value:")
+    console.log(this.collapsed);
+  }
+
 }
