@@ -1,0 +1,10 @@
+.card-img-top {
+    width: auto;
+    min-width: 300px;
+    max-height: 300px;
+    padding-top: 1%;
+}
+
+.btn {
+    margin-top: 10px;
+}
