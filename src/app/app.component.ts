@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'my-food-app';
   isLoggedIn: boolean = true;
+
+  changeLogInStatus(){
+    this.isLoggedIn = !this.isLoggedIn;
+  }
 }
