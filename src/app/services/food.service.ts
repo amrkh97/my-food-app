@@ -28,4 +28,8 @@ export class FoodService {
   addToCart(foodItem:foodObject){
     this.orderedFood.push(foodItem);
   }
+
+  getOrderedFood(){
+    return this.orderedFood;
+  }
 }

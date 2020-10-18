@@ -16,6 +16,7 @@ export class FoodItemComponent implements OnInit {
   
   addToCart(foodItem: foodObject){
     this.foodS.addToCart(foodItem);
+    console.log(foodItem.name + " was added to the cart!");
   }
 
 }
