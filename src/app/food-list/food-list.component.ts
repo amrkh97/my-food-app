@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FoodService } from '../services/food.service';
 import { UserService } from '../services/user.service';
-import {foodObject} from './food-item/food-item.model'
+import {foodObject} from '../models/food-item.model'
 @Component({
   selector: 'app-food-list',
   templateUrl: './food-list.component.html',

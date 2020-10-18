@@ -10,6 +10,7 @@ import { FoodListComponent } from './food-list/food-list.component';
 import { ToggleDropdownDirective } from './directives/toggle-dropdown.directive';
 import { LoginComponent } from './login/login.component';
 import { FoodCartComponent } from './food-cart/food-cart.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FoodCartComponent } from './food-cart/food-cart.component';
     FoodListComponent,
     ToggleDropdownDirective,
     LoginComponent,
-    FoodCartComponent
+    FoodCartComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
