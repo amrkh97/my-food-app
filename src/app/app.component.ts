@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserService } from './services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-food-app';
-  isLoggedIn: boolean = true;
+  constructor(private userService: UserService){}
 
-  changeLogInStatus(){
-    this.isLoggedIn = !this.isLoggedIn;
+  getLogInStatus(){
+    return this.userService.getLogInStatus();
   }
 }
