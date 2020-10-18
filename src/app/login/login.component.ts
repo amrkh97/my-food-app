@@ -14,6 +14,12 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  validateLogin(){
+    // Validation Form.
+    
+    this.navigateToFoodList();
+  }
+
   navigateToFoodList(){
     this.userS.setLogInStatus(true);
     this.router.navigate(['../foodlist'])
