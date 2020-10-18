@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FoodService } from './services/food.service';
 import { UserService } from './services/user.service';
 
 @Component({
@@ -8,7 +9,8 @@ import { UserService } from './services/user.service';
 })
 export class AppComponent {
   title = 'my-food-app';
-  constructor(private userService: UserService){}
+  constructor(private userService: UserService,
+    private foodService:FoodService){}
 
   getLogInStatus(){
     return this.userService.getLogInStatus();

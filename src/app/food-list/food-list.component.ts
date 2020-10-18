@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FoodService } from '../services/food.service';
 import { UserService } from '../services/user.service';
 import {foodObject} from './food-item/food-item.model'
 @Component({
@@ -7,14 +8,13 @@ import {foodObject} from './food-item/food-item.model'
   styleUrls: ['./food-list.component.css']
 })
 export class FoodListComponent implements OnInit {
-  listOfFood: foodObject[] = [
-    new foodObject('Messy Burger',85,'Just pure chaos in a sandwich.' ,'https://www.thebuffaloburger.com/images/m_burger.png'),
-    new foodObject('Fried Chicken',110,'It is finger lickin\' good!','https://c.ndtvimg.com/2019-05/usn4dnv_fried-chicken_625x300_24_May_19.jpg')
-  ]
-  constructor(private userS:UserService) { }
+  listOfFood:foodObject[];
+  constructor(private userS:UserService,
+     private foodS: FoodService) { }
 
   ngOnInit(): void {
     console.log(this.userS.getLogInStatus())
+    this.listOfFood = this.foodS.getListOfFood();
   }
 
 }
