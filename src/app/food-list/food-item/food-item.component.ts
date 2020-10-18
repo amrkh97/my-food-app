@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FoodService } from 'src/app/services/food.service';
 import {foodObject} from './food-item.model'
 
 @Component({
@@ -8,9 +9,13 @@ import {foodObject} from './food-item.model'
 })
 export class FoodItemComponent implements OnInit {
   @Input() foodItem: foodObject;
-  constructor() { }
+  constructor(private foodS:FoodService) { }
 
   ngOnInit(): void {
+  }
+  
+  addToCart(foodItem: foodObject){
+    this.foodS.addToCart(foodItem);
   }
 
 }

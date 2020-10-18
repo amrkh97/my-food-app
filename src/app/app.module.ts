@@ -9,6 +9,7 @@ import { FoodItemComponent } from './food-list/food-item/food-item.component';
 import { FoodListComponent } from './food-list/food-list.component';
 import { ToggleDropdownDirective } from './directives/toggle-dropdown.directive';
 import { LoginComponent } from './login/login.component';
+import { FoodCartComponent } from './food-cart/food-cart.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { LoginComponent } from './login/login.component';
     FoodItemComponent,
     FoodListComponent,
     ToggleDropdownDirective,
-    LoginComponent
+    LoginComponent,
+    FoodCartComponent
   ],
   imports: [
     BrowserModule,
