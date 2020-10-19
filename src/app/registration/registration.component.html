@@ -1,0 +1,21 @@
+<div class="container offset-3 rounded p-3 my-3 bg-white text-black">
+    <div class="row justify-content-center">
+        <br>
+        <div class="col-12">
+            <div class="row">
+                <form (ngSubmit)="onSubmit()" #loginForm="ngForm" class="form-group">
+
+                    <h2 class="form-title">Sign In to my account</h2>
+                    <br><br>
+                    <div>
+                        <input type="text" class="form-control" name="name" placeholder="User Name" ngModel required>
+                        <input type="password" class="form-control" name="password" placeholder="Password" ngModel required>
+                        <br><br>
+                        <button type="submit" class="col text-center btn btn-primary" [disabled]="!loginForm.valid">Login</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

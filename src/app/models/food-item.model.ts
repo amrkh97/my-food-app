@@ -1,10 +1,10 @@
 export class foodObject{
     name: string;
-    price: string;
+    price: number;
     description: string;
     imgPath: string;
 
-    constructor(name:string,price:string, desc: string, img: string){
+    constructor(name:string,price:number, desc: string, img: string){
         this.name = name;
         this.price = price;
         this.description = desc;

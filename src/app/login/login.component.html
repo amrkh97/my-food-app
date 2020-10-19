@@ -1,0 +1,29 @@
+<div class="container offset-3 rounded p-3 my-3 bg-white text-black">
+    <div class="row justify-content-center">
+        <br>
+        <div class="col-12">
+            <div class="row">
+                <form (ngSubmit)="onSubmit()" #loginForm="ngForm" class="form-group">
+                    <h2 class="form-title">Create my account</h2>
+                    <br><br>
+                    <div>
+                        <input type="text" class="form-control" name="name" placeholder="User Name" ngModel required>
+                        <input type="email" class="form-control" name="email" placeholder="Your Email" ngModel email required>
+                        <input type="password" class="form-control" name="password" placeholder="Password" ngModel required>
+                        <input type="password" class="form-control" name="re_password" placeholder="Repeat your password" ngModel required>
+                        <input type="text" class="form-control" name="mobilenumber" minlength="11" maxlength="11" placeholder="Mobile Number" pattern="[0-9]+" title="Numbers Only">
+                        <input type="text" class="form-control" name="address" placeholder="Your Address">
+
+                        <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" ngModel required>
+                        <label for="agree-term" class="agree-term"><span><span></span></span>I agree to all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                        <br><br>
+                        <button type="submit" class="col text-center btn btn-primary" [disabled]="!loginForm.valid">Signup</button>
+                    </div>
+                </form>
+            </div>
+            <div class="row">
+                <p>Or <a routerLink="/register">Sign In</a> instead!</p>
+            </div>
+        </div>
+    </div>
+</div>

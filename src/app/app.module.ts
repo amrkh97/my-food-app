@@ -8,6 +8,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FoodItemComponent } from './food-list/food-item/food-item.component';
 import { FoodListComponent } from './food-list/food-list.component';
 import { ToggleDropdownDirective } from './directives/toggle-dropdown.directive';
+import { LoginComponent } from './login/login.component';
+import { FoodCartComponent } from './food-cart/food-cart.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { ToggleDropdownDirective } from './directives/toggle-dropdown.directive'
     NavigationComponent,
     FoodItemComponent,
     FoodListComponent,
-    ToggleDropdownDirective
+    ToggleDropdownDirective,
+    LoginComponent,
+    FoodCartComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
