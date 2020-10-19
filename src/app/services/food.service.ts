@@ -6,8 +6,11 @@ import { foodObject } from '../models/food-item.model';
 })
 export class FoodService {
   listOfFood: foodObject[] = [
-    new foodObject('Messy Burger',85,'Just pure chaos in a sandwich.' ,'https://www.thebuffaloburger.com/images/m_burger.png'),
-    new foodObject('Fried Chicken',110,'It is finger lickin\' good!','https://c.ndtvimg.com/2019-05/usn4dnv_fried-chicken_625x300_24_May_19.jpg')
+    new foodObject('Messy Burger',85,'Just pure chaos in a sandwich.' ,'../../assets/burger_sandwich.png'),
+    new foodObject('Fried Chicken',110,'It is finger lickin\' good!','../../assets/fried_chicken.jpg'),
+    new foodObject('Grilled Chicken',120,'Charcoaled to perfection ','../../assets/grilled_chicken.jpg'),
+    new foodObject('Pizza',80,'Need we say more?','../../assets/pizza.jpg'),
+    new foodObject('Pasta Alfredo',85,'Creaminess you can\'t resist.','../../assets/pasta.jpg')
   ]
 
   orderedFood: foodObject[] = [];
