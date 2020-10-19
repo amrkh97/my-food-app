@@ -31,9 +31,10 @@ export class LoginComponent implements OnInit {
   }
 
   validateUser(){
-    let userName = this.loginForm.form.value.userName;
+    let userName = this.loginForm.form.value.name;
     let pass = this.loginForm.form.value.password;
     let repass = this.loginForm.form.value.re_password;
+    
     if(userName && pass === repass && pass.length >= 8){
       return true;
     }else{
