@@ -21,24 +21,16 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
-    if(this.validateUser()){
+    let userName = this.loginForm.form.value.name;
+    let pass = this.loginForm.form.value.password;
+    let repass = this.loginForm.form.value.re_password;
+
+    if(this.userS.validateUser(userName, pass, repass)){
       this.userS.setLogInStatus(true);
       this.router.navigate(['../foodlist'])
     }else{
       alert('Invalid User Name Or password mismatch');
       this.loginForm.form.reset();
-    }
-  }
-
-  validateUser(){
-    let userName = this.loginForm.form.value.name;
-    let pass = this.loginForm.form.value.password;
-    let repass = this.loginForm.form.value.re_password;
-    
-    if(userName && pass === repass && pass.length >= 8){
-      return true;
-    }else{
-      return false;
     }
   }
 

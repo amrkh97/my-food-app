@@ -2,6 +2,8 @@
         Confirm Order
 </button>
 
+<br><br>
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -14,6 +16,7 @@
             </div>
             <div class="modal-body">
                 <p>Total Price is: {{foodTotal}} L.E</p>
+                <p>Your order is confirmed.</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
@@ -23,18 +26,24 @@
 </div>
 
 
-<h3 style="padding-top: 10px">Order Details:</h3>
-<div class="card" style="min-width: 400px;" *ngFor='let singleOrder of orderedFood'>
-    <img class="card-img-top img-responsive" [src]="singleOrder.imgPath" alt='{{singleOrder.description}}'>
-    <hr>
-    <div class="card-body ">
-        <div class="row">
-            <div class="col-8">
-                <h5 class="card-title">{{ singleOrder.name }}</h5>
-                <p class="card-text">{{ singleOrder.description }}</p>
-            </div>
-            <div class="col-4">
-                <p style="text-align: end;">Price is: {{singleOrder.price}} L.E</p>
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <h3 style="padding-top: 10px">Order Total:</h3>
+            <h4 style="color: green">{{foodTotal}} L.E</h4>
+        </div>
+        <div class="col-6 offset-1">
+            <div class="card" style="min-width: 100px; max-width: 400px;" *ngFor='let singleOrder of orderedFood'>
+                <img class="card-img-top img-responsive" [src]="singleOrder.imgPath" alt='{{singleOrder.description}}'>
+                <hr>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <h5 class="card-title">{{ singleOrder.name }}</h5>
+                            <p class="card-text" style="text-align: center;">Price is: {{singleOrder.price}} L.E</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
