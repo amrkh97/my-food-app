@@ -1,4 +1,6 @@
-import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Injectable, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { foodObject } from '../models/food-item.model';
 
 @Injectable({
@@ -14,15 +16,21 @@ export class FoodService {
   ]
 
   orderedFood: foodObject[] = [];
-  constructor() { }
-
-  #WIP
-  ngOnInit(){
-
+  constructor(private http: HttpClient) { 
   }
 
   getListOfFood(){
+    
     return this.listOfFood;
+  }
+
+  getFoodFromService(){
+    return this.http.get<foodObject[]>('http://localhost:8080/foodItems');
+  }
+
+
+  setListOfFood(foodList: foodObject[]){
+    this.listOfFood = foodList;
   }
 
   getFoodTotal(){
