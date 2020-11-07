@@ -6,15 +6,20 @@ import { foodObject } from '../models/food-item.model';
 })
 export class FoodService {
   listOfFood: foodObject[] = [
-    new foodObject('Messy Burger',85,'Just pure chaos in a sandwich.' ,'../../assets/burger_sandwich.png'),
-    new foodObject('Fried Chicken',110,'It is finger lickin\' good!','../../assets/fried_chicken.jpg'),
-    new foodObject('Grilled Chicken',120,'Charcoaled to perfection ','../../assets/grilled_chicken.jpg'),
-    new foodObject('Pizza',80,'Need we say more?','../../assets/pizza.jpg'),
-    new foodObject('Pasta Alfredo',85,'Creaminess you can\'t resist.','../../assets/pasta.jpg')
+    new foodObject(0,'Messy Burger',85,'Just pure chaos in a sandwich.' ,'../../assets/burger_sandwich.png'),
+    new foodObject(0,'Fried Chicken',110,'It is finger lickin\' good!','../../assets/fried_chicken.jpg'),
+    new foodObject(0,'Grilled Chicken',120,'Charcoaled to perfection ','../../assets/grilled_chicken.jpg'),
+    new foodObject(0,'Pizza',80,'Need we say more?','../../assets/pizza.jpg'),
+    new foodObject(0,'Pasta Alfredo',85,'Creaminess you can\'t resist.','../../assets/pasta.jpg')
   ]
 
   orderedFood: foodObject[] = [];
   constructor() { }
+
+  #WIP
+  ngOnInit(){
+
+  }
 
   getListOfFood(){
     return this.listOfFood;

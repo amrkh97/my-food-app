@@ -64,7 +64,14 @@ export class AppPage {
 
   addFoodToCart(idx:number){
     let foodButtons = element.all(by.id('foodlistelements'));
-    foodButtons.get(idx).click();
+    let foodButton = foodButtons.get(idx);
+    browser.controlFlow().execute(function() {
+      browser.executeScript('arguments[0].scrollIntoView(true)', foodButton.getWebElement());
+    });
+    foodButton.$$('.btn').click();
+    
+    let alert = browser.switchTo().alert();
+    alert.accept();
   }
 
   checkFoodTotal(){
@@ -73,8 +80,6 @@ export class AppPage {
 
   clickViewCartFromList(){
     element.all(by.css('.btn-block')).last().click();
-    let alert = browser.switchTo().alert();
-    alert.dismiss();
   }
 
 

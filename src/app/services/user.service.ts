@@ -53,4 +53,9 @@ export class UserService {
     }
   }
 
+  // Delete the token from the local storage so user can't send it anymore
+  logOutUser(){
+    localStorage.clear()
+  }
+
 }

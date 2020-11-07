@@ -5,9 +5,11 @@ describe('Food App', () => {
   let page: AppPage;
 
   beforeEach(() => {
+    console.log('new page!');
     page = new AppPage();
   });
 
+  /*
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser
     const logs = await browser.manage().logs().get(logging.Type.BROWSER);
@@ -15,6 +17,7 @@ describe('Food App', () => {
       level: logging.Level.SEVERE,
     } as logging.Entry));
   });
+  */
 
   //Registration Page:
   it('should register a user', () => {
@@ -47,10 +50,10 @@ describe('Food App', () => {
     expect(x).toEqual(5);
   });
 
-  //WIP
   it('should add a burger & a pizza to the cart', ()=>{
     page.navigateToFoodList();
     page.addFoodToCart(0); //Burger
+    browser.executeScript('window.scrollTo(0,document.body.scrollHeight)');
     page.addFoodToCart(3); //Pizza
     page.clickViewCartFromList();
     //page.navigateToFoodCart();

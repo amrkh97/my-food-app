@@ -17,4 +17,8 @@ export class NavigationComponent implements OnInit {
     this.collapsed = !this.collapsed;
   }
 
+  logOut(){
+    //localStorage.removeItem('token');
+    localStorage.clear();
+  }
 }

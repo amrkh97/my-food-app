@@ -11,6 +11,8 @@ import { ToggleDropdownDirective } from './directives/toggle-dropdown.directive'
 import { LoginComponent } from './login/login.component';
 import { FoodCartComponent } from './food-cart/food-cart.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -27,9 +29,14 @@ import { RegistrationComponent } from './registration/registration.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     NgbModule
   ],
-  providers: [],
+  providers: [{
+    provide : HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi   : true,
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
