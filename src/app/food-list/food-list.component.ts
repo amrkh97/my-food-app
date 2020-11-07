@@ -11,13 +11,20 @@ import {foodObject} from '../models/food-item.model'
 })
 export class FoodListComponent implements OnInit {
   listOfFood:foodObject[];
-  //@ViewChild('myModal') myModal;
 
   constructor(private userS:UserService,
      private foodS: FoodService, private router: Router) { }
 
   ngOnInit(): void {
-    this.listOfFood = this.foodS.getListOfFood();
+    this.foodS.getFoodFromService().subscribe((serverResponse: any) => {
+      
+      this.listOfFood = serverResponse;
+
+    }, (error: { json: () => void; }) => {
+      console.log(error);
+      
+      alert("Error in getting food list!");
+    });
   }
 
   checkOrder(){
@@ -26,7 +33,6 @@ export class FoodListComponent implements OnInit {
   }
 
   openAlert() {
-    //this.myModal.nativeElement.className = 'show';
     alert("Please add food to the cart before proceeding!")
   }
 

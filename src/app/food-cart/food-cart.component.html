@@ -1,4 +1,4 @@
-<button class="btn-lg btn-dark btn-block" data-toggle="modal" data-target="#exampleModal" aria-disabled="true">
+<button class="btn-lg btn-dark btn-block" data-toggle="modal" data-target="#exampleModal" aria-disabled="true" (click)='sendFoodOrder()'>
         Confirm Order
 </button>
 
@@ -30,7 +30,7 @@
     <div class="row">
         <div class="col-4">
             <h3 style="padding-top: 10px">Order Total:</h3>
-            <h4 style="color: green">{{foodTotal}} L.E</h4>
+            <h4 id='foodtotal' style="color: green">{{foodTotal}} L.E</h4>
         </div>
         <div class="col-6 offset-1">
             <div class="card" style="min-width: 100px; max-width: 400px;" *ngFor='let singleOrder of orderedFood'>

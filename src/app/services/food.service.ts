@@ -1,4 +1,6 @@
-import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Injectable, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { foodObject } from '../models/food-item.model';
 
 @Injectable({
@@ -6,18 +8,29 @@ import { foodObject } from '../models/food-item.model';
 })
 export class FoodService {
   listOfFood: foodObject[] = [
-    new foodObject('Messy Burger',85,'Just pure chaos in a sandwich.' ,'../../assets/burger_sandwich.png'),
-    new foodObject('Fried Chicken',110,'It is finger lickin\' good!','../../assets/fried_chicken.jpg'),
-    new foodObject('Grilled Chicken',120,'Charcoaled to perfection ','../../assets/grilled_chicken.jpg'),
-    new foodObject('Pizza',80,'Need we say more?','../../assets/pizza.jpg'),
-    new foodObject('Pasta Alfredo',85,'Creaminess you can\'t resist.','../../assets/pasta.jpg')
+    new foodObject(0,'Messy Burger',85,'Just pure chaos in a sandwich.' ,'../../assets/burger_sandwich.png'),
+    new foodObject(0,'Fried Chicken',110,'It is finger lickin\' good!','../../assets/fried_chicken.jpg'),
+    new foodObject(0,'Grilled Chicken',120,'Charcoaled to perfection ','../../assets/grilled_chicken.jpg'),
+    new foodObject(0,'Pizza',80,'Need we say more?','../../assets/pizza.jpg'),
+    new foodObject(0,'Pasta Alfredo',85,'Creaminess you can\'t resist.','../../assets/pasta.jpg')
   ]
 
   orderedFood: foodObject[] = [];
-  constructor() { }
+  constructor(private http: HttpClient) { 
+  }
 
   getListOfFood(){
+    
     return this.listOfFood;
+  }
+
+  getFoodFromService(){
+    return this.http.get<foodObject[]>('http://localhost:8080/foodItems');
+  }
+
+
+  setListOfFood(foodList: foodObject[]){
+    this.listOfFood = foodList;
   }
 
   getFoodTotal(){

@@ -1,4 +1,5 @@
 export class userObject{
+    id: number;
     name: string;
     password: string;
     

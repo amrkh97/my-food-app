@@ -1,18 +1,15 @@
 import { AppPage } from './app.po';
 import { browser, logging } from 'protractor';
 
-describe('workspace-project App', () => {
+describe('Food App', () => {
   let page: AppPage;
 
   beforeEach(() => {
+    console.log('new page!');
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getTitleText()).toEqual('my-food-app app is running!');
-  });
-
+  /*
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser
     const logs = await browser.manage().logs().get(logging.Type.BROWSER);
@@ -20,4 +17,48 @@ describe('workspace-project App', () => {
       level: logging.Level.SEVERE,
     } as logging.Entry));
   });
+  */
+
+  //Registration Page:
+  it('should register a user', () => {
+    page.navigateTo();
+    page.setUserName('amr khaled');
+    page.setEmail('amrkh97@gmail.com');
+    page.setPassword('asdfasdf');
+    page.setRePassword('asdfasdf');
+    page.agreeToTerms();
+    page.clickRegisterUserButton();
+    expect(page.getCurrentUrl()).toContain('foodlist');
+  });
+
+  it('shouldn\'t register the user - No Data Entered -', () => {
+    page.navigateTo();
+    expect(page.getRegistrationButtonStatus()).toBeTruthy();
+  });
+
+  it('shouldn\'t register the user - Terms not agreed -',()=>{
+    page.navigateTo();
+    page.registerUserData('Amr Khaled', 'a@g.c', 'asdfasdf');
+    expect(page.getRegistrationButtonStatus()).toBeTruthy();
+  });
+
+
+  //Food List Ordering:
+  it('should check that food was loaded correctly', () => {
+    page.navigateToFoodList();
+    let x = page.checkInitialFoodLoaded();
+    expect(x).toEqual(5);
+  });
+
+  it('should add a burger & a pizza to the cart', ()=>{
+    page.navigateToFoodList();
+    page.addFoodToCart(0); //Burger
+    browser.executeScript('window.scrollTo(0,document.body.scrollHeight)');
+    page.addFoodToCart(3); //Pizza
+    page.clickViewCartFromList();
+    //page.navigateToFoodCart();
+    expect(page.checkFoodTotal()).toContain('165');
+  });
+  
+
 });

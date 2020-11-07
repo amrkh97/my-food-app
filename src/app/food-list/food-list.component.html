@@ -1,7 +1,7 @@
 <div class="container rounded">
-    <div class="row">
+    <div class="row" id="foodrow">
         <div class="col-12">
-            <app-food-item *ngFor='let foodaya of listOfFood' [foodItem]="foodaya"></app-food-item>
+            <app-food-item id='foodlistelements' *ngFor='let foodaya of listOfFood' [foodItem]="foodaya"></app-food-item>
         </div>
     </div>
 </div>
