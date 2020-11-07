@@ -46,6 +46,7 @@ export class RegistrationComponent implements OnInit {
 
       localStorage.setItem('token', serverResponse.jwt);
       localStorage.setItem('userInfo', serverResponse.userModel);
+      localStorage.setItem('userId', serverResponse.userModel.id);
       console.log("Token was generated!");
 
       if (localStorage.getItem('token') === null) {
